@@ -1,6 +1,6 @@
 {
     "name": "puppet-bunny",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Polymer Element that shows a jumping puppet bunny",
     "license": "MIT",
     "main": "src/puppet-bunny.html",
