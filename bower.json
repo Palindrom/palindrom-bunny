@@ -3,7 +3,7 @@
     "version": "0.1.1",
     "description": "Polymer Element that shows a jumping puppet bunny",
     "license": "MIT",
-    "main": "src/puppet-bunny.html",
+    "main": "puppet-bunny.html",
     "keywords": [
         "polymer",
         "web-components",
@@ -14,7 +14,8 @@
         "**/.*",
         "node_modules",
         "bower_components",
-        "preview.png"
+        "preview.png",
+        "index.html"
     ],
     "dependencies": {
         "polymer": "Polymer/polymer#>=1.0.0"

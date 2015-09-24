@@ -18,16 +18,16 @@ Or [download as ZIP](https://github.com/PuppetJs/puppet-bunny/archive/master.zip
 
 ## Usage
 
-1. Import Web Components' polyfill:
+1. Import Web Components' polyfill, if needed:
 
     ```html
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/polymer/0.3.4/platform.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     ```
 
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/puppet-bunny/src/puppet-bunny.html">
+    <link rel="import" href="bower_components/puppet-bunny/puppet-bunny.html">
     ```
 
 3. Start using it!
