@@ -1,74 +1,85 @@
 <!-- puppet-bunny v0.1.1 | MIT License -->
-
 <link rel="import" href="../../polymer/polymer.html">
+<dom-module id="puppet-bunny">
+    <style>
+        #puppetAnim {
+            width: 107px;
+            height: 145px;
+            position: fixed;
+            left: 0;
+            bottom: 125px;
+        }
 
-<polymer-element name="puppet-bunny">
+        #puppet {
+            width: 107px;
+            height: 145px;
+        }
+
+        .mirrored {
+            -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
+        }
+    </style>
     <template>
-        <style>
-            #puppetAnim {
-                width: 107px;
-                height: 145px;
-                position: fixed;
-                left: 0;
-                bottom: 125px;
-            }
-
-            #puppet {
-                width: 107px;
-                height: 145px;
-            }
-
-            .mirrored {
-                -webkit-transform: rotateY(180deg);
-                transform: rotateY(180deg);
-            }
-        </style>
         <div id="puppetAnim">
             <img id="puppet" src="puppet.png">
         </div>
     </template>
     <script>
-        Polymer("puppet-bunny", {
-            position: 0, //0 .. 100
-            direction: 1,
-            step: 1,
-            width: 107,
-            height: 145,
-            ready: function () {
+        Polymer({
+            is: 'puppet-bunny',
+            properties: {
+                //0 .. 100
+                direction: {
+                    type: Number,
+                    value: 1
+                },
+                height: {
+                    type: Number,
+                    value: 145
+                },
+                position: {
+                    type: Number,
+                    value: 0
+                },
+                step: {
+                    type: Number,
+                    value: 1
+                },
+                width: {
+                    type: Number,
+                    value: 107
+                }
+            },
+            ready: function() {
                 this.animateStep();
             },
-            animateStep: function () {
+            animateStep: function() {
                 var that = this;
-                window.requestAnimationFrame(function () {
+                window.requestAnimationFrame(function() {
                     var maxLeft = window.innerWidth - that.width;
-
                     that.position = that.position + that.step * that.direction;
-
-                    var left = maxLeft * that.position / 100 + "px";
-
-                    var jumpLength = 4; //1-20
-                    var jumpHeight = 100; //px
-
-                    var bottom = Math.abs(jumpHeight * Math.sin(that.position / jumpLength)) + "px";
-
+                    var left = maxLeft * that.position / 100 + 'px';
+                    var jumpLength = 4;
+                    //1-20
+                    var jumpHeight = 100;
+                    //px
+                    var bottom = Math.abs(jumpHeight * Math.sin(that.position / jumpLength)) + 'px';
                     that.$.puppetAnim.style.transform = 'translate(' + left + ', ' + bottom + ')';
-                    that.$.puppetAnim.style.webkitTransform =  that.$.puppetAnim.style.transform;
-
+                    that.$.puppetAnim.style.webkitTransform = that.$.puppetAnim.style.transform;
                     if (that.position >= 100 || that.position <= 0) {
                         that.direction = -that.direction;
                         if (that.direction > 0) {
-                            that.$.puppet.classList.remove("mirrored");
-                        }
-                        else {
-                            that.$.puppet.classList.add("mirrored");
+                            that.$.puppet.classList.remove('mirrored');
+                        } else {
+                            that.$.puppet.classList.add('mirrored');
                         }
                     }
-
-                    window.requestAnimationFrame(function () {
+                    window.requestAnimationFrame(function() {
                         that.animateStep();
                     });
-                })
+                });
             }
         });
     </script>
-</polymer-element>
+</dom-module>

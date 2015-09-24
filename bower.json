@@ -17,6 +17,6 @@
         "preview.png"
     ],
     "dependencies": {
-        "polymer": "Polymer/polymer#<0.8.0"
+        "polymer": "Polymer/polymer#>=1.0.0"
     }
 }
