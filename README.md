@@ -50,4 +50,4 @@ For detailed changelog, check [Releases](https://github.com/PuppetJs/puppet-bunn
 
 ## License
 
- - [MIT License](http://opensource.org/licenses/MIT)
+MIT
