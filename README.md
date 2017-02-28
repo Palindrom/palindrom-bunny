@@ -1,20 +1,20 @@
-# &lt;puppet-bunny&gt;
+# &lt;palindrom-bunny&gt;
 
 > Polymer Element that shows a jumping puppet bunny
 
 ## Demo
 
-[Check it live!](http://puppetjs.github.io/puppet-bunny)
+[Check it live!](http://Palindrom.github.io/palindrom-bunny)
 
 ## Install
 
 Install the component using [Bower](http://bower.io/):
 
 ```sh
-$ bower install puppet-bunny --save
+$ bower install palindrom-bunny --save
 ```
 
-Or [download as ZIP](https://github.com/PuppetJs/puppet-bunny/archive/master.zip).
+Or [download as ZIP](https://github.com/Palindrom/palindrom-bunny/archive/master.zip).
 
 ## Usage
 
@@ -27,13 +27,13 @@ Or [download as ZIP](https://github.com/PuppetJs/puppet-bunny/archive/master.zip
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="bower_components/puppet-bunny/puppet-bunny.html">
+    <link rel="import" href="bower_components/palindrom-bunny/palindrom-bunny.html">
     ```
 
 3. Start using it!
 
     ```html
-    <puppet-bunny></puppet-bunny>
+    <palindrom-bunny></palindrom-bunny>
     ```
 
 ## Contributing
@@ -42,11 +42,11 @@ Or [download as ZIP](https://github.com/PuppetJs/puppet-bunny/archive/master.zip
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -m 'Add some feature'`
 4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+5. Submit a pull request 🎉
 
 ## History
 
-For detailed changelog, check [Releases](https://github.com/PuppetJs/puppet-bunny/releases).
+For detailed changelog, check [Releases](https://github.com/Palindrom/palindrom-bunny/releases).
 
 ## License
 
