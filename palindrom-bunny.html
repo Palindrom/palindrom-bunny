@@ -1,8 +1,8 @@
-<!-- puppet-bunny v1.0.0 | MIT License -->
+<!-- palindrom-bunny v2.0.0 | MIT License -->
 <link rel="import" href="../polymer/polymer.html">
-<dom-module id="puppet-bunny">
+<dom-module id="palindrom-bunny">
     <style>
-        #puppetAnim {
+        #palindromAnim {
             width: 107px;
             height: 145px;
             position: fixed;
@@ -10,7 +10,7 @@
             bottom: 125px;
         }
 
-        #puppet {
+        #palindrom {
             width: 107px;
             height: 145px;
         }
@@ -21,13 +21,13 @@
         }
     </style>
     <template>
-        <div id="puppetAnim">
-            <img id="puppet" src="src/puppet.png">
+        <div id="palindromAnim">
+            <img id="palindrom" src="src/puppet.png">
         </div>
     </template>
     <script>
         Polymer({
-            is: 'puppet-bunny',
+            is: 'palindrom-bunny',
             properties: {
                 //0 .. 100
                 direction: {
@@ -65,14 +65,14 @@
                     var jumpHeight = 100;
                     //px
                     var bottom = Math.abs(jumpHeight * Math.sin(that.position / jumpLength)) + 'px';
-                    that.$.puppetAnim.style.transform = 'translate(' + left + ', ' + bottom + ')';
-                    that.$.puppetAnim.style.webkitTransform = that.$.puppetAnim.style.transform;
+                    that.$.palindromAnim.style.transform = 'translate(' + left + ', ' + bottom + ')';
+                    that.$.palindromAnim.style.webkitTransform = that.$.palindromAnim.style.transform;
                     if (that.position >= 100 || that.position <= 0) {
                         that.direction = -that.direction;
                         if (that.direction > 0) {
-                            that.$.puppet.classList.remove('mirrored');
+                            that.$.palindrom.classList.remove('mirrored');
                         } else {
-                            that.$.puppet.classList.add('mirrored');
+                            that.$.palindrom.classList.add('mirrored');
                         }
                     }
                     window.requestAnimationFrame(function() {
