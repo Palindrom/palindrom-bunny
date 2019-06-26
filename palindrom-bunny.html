@@ -1,28 +1,28 @@
 <!-- palindrom-bunny v2.0.0 | MIT License -->
 <link rel="import" href="../polymer/polymer.html">
 <dom-module id="palindrom-bunny">
-    <style>
-        #palindromAnim {
-            width: 107px;
-            height: 145px;
-            position: fixed;
-            left: 0;
-            bottom: 125px;
-        }
-
-        #palindrom {
-            width: 107px;
-            height: 145px;
-        }
-
-        .mirrored {
-            -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-        }
-    </style>
     <template>
+        <style>
+            #palindromAnim {
+                width: 107px;
+                height: 145px;
+                position: fixed;
+                left: 0;
+                bottom: 125px;
+            }
+    
+            #palindrom {
+                width: 107px;
+                height: 145px;
+            }
+    
+            .mirrored {
+                -webkit-transform: rotateY(180deg);
+                transform: rotateY(180deg);
+            }
+        </style>
         <div id="palindromAnim">
-            <img id="palindrom" src="src/puppet.png">
+            <img id="palindrom" src$="{{imgsrc}}">
         </div>
     </template>
     <script>
@@ -49,6 +49,10 @@
                 width: {
                     type: Number,
                     value: 107
+                },
+                imgsrc: {
+                    type: String,
+                    value: function() {return this.resolveUrl('src/puppet.png')}
                 }
             },
             ready: function() {
