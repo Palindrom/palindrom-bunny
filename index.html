@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>&lt;palindrom-bunny&gt;</title>
 
-    <!-- Importing Web Component's Polyfill -->
-    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <!-- Importing Web Components Polyfill -->
+    <script src="//unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.js"></script>
 
-    <!-- Importing Custom Elements -->
-    <link rel="import" href="palindrom-bunny.html">
+    <!-- Importing Custom Element -->
+    <script src="palindrom-bunny.js"></script>
 
     <style>
         body {
@@ -18,10 +18,6 @@
             margin: 0 auto;
             padding: 30px;
             height: 100%;
-        }
-
-        juicy-jsoneditor {
-            height: 18em;
         }
 
         #demo {
@@ -45,13 +41,33 @@
         iframe {
             float: right;
         }
+
+        .full-width {
+            width: 100%;
+            height: 149px;
+        }
+
+        palindrom-bunny {
+            width: 100%;
+            position: fixed;
+            background: #EEE;
+            left: 75px; /*for margin from the viewport edges, this should be more than img margin-left*/
+            top: 132px;
+            width: calc(100vw - 150px); /*for equal margin from the viewport edges, this should (100vw - 2*left) */
+        }
+
+        palindrom-bunny img {
+            width: 107px; /*for crispness on Hi-DPI, this should be half of the image natural width*/
+            height: 145px; /*for crispness on Hi-DPI, this should be half of the image natural height*/
+            margin-left: -53px; /*for horizontal centering, this should be half of the img width*/
+        }
     </style>
 </head>
 <body>
 <a href="https://github.com/Palindrom/palindrom-bunny"><img style="position: absolute; top: 0; right: 0; border: 0;"
                                                         src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"
                                                         alt="Fork me on GitHub"></a>
-<article class="markdown-body">
+<article class="markdown-body hide-scrollbar">
     <iframe src="http://ghbtns.com/github-btn.html?user=Palindrom&repo=palindrom-bunny&type=watch&count=true&size=medium"
             allowtransparency="true" frameborder="0" scrolling="0" width="90" height="30"></iframe>
 
@@ -61,14 +77,38 @@
         Polymer Element that shows a jumping puppet bunny
     </p>
 
-    <palindrom-bunny></palindrom-bunny>
+    <div class="full-width">
+        <palindrom-bunny>
+            <img src="src/puppet.png">
+        </palindrom-bunny>
+    </div>
 
     <h2>How to use</h2>
     <section id="examples">
         <section>
-            <code>
-                &lt;palindrom-bunny&gt;&lt;/palindrom-bunny&gt;
-            </code>
+            <pre><code>
+&lt;palindrom-bunny&gt;
+    &lt;img src="src/puppet.png"&gt;
+    &lt;!-- This is an image of the bunny that is included with this package. You can also use any other image. --&gt;
+&lt;/palindrom-bunny&gt;
+
+&lt;style&gt;
+    palindrom-bunny {
+        width: 100%;
+        position: fixed;
+        background: #EEE;
+        left: 75px; /*for margin from the viewport edges, this should be more than img margin-left*/
+        top: 132px;
+        width: calc(100vw - 150px); /*for equal margin from the viewport edges, this should (100vw - 2*left) */
+    }
+
+    palindrom-bunny img {
+        width: 107px; /*for crispness on Hi-DPI, this should be half of the image natural width*/
+        height: 145px; /*for crispness on Hi-DPI, this should be half of the image natural height*/
+        margin-left: -53px; /*for horizontal centering, this should be half of the img width*/
+    }
+&lt;/style&gt;
+            </code></pre>
         </section>
     </section>
 
