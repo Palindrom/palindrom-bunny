@@ -1,0 +1,19 @@
+{
+  "name": "palindrom-bunny",
+  "version": "4.0.0",
+  "description": "Custom element that shows a jumping bunny",
+  "main": "palindrom-bunny.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Palindrom/palindrom-bunny.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Palindrom/palindrom-bunny/issues"
+  },
+  "homepage": "https://github.com/Palindrom/palindrom-bunny#readme"
+}
