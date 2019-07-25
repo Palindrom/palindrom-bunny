@@ -1,6 +1,6 @@
 # &lt;palindrom-bunny&gt;
 
-> Polymer Element that shows a jumping puppet bunny
+> Custom element that shows a jumping puppet bunny
 
 ## Demo
 
